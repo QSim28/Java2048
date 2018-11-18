@@ -54,7 +54,7 @@ public class GUI {
         mainWindow.setTitle("2048!");
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainWindow.setSize(1000, 1000);
-        mainWindow.setResizable(false);
+        //mainWindow.setResizable(false);
 
         JPanel content = initContentPanel();
         mainWindow.setContentPane(content);
@@ -112,7 +112,7 @@ public class GUI {
 
 
     private static void loseGame() {
-        System.out.println("YOU LOSE!");
+        //System.out.println("YOU LOSE!");
 
         int result = JOptionPane.showConfirmDialog(mainWindow,
             "Would you like to play again?", "You Lose!",
