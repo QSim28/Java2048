@@ -1,5 +1,5 @@
 import java.awt.Font;
-import java.io.File;
+import java.io.InputStream;
 
 public class ProjectFont {
     public static final int PRIMARYFONTSIZE = 90;
@@ -12,8 +12,11 @@ public class ProjectFont {
     private static Font setUp(int fontSize) {
         Font font = null;
         try {
-            font = Font.createFont(Font.TRUETYPE_FONT, new File(
-                "ClearSans-Bold.ttf")).deriveFont(Font.BOLD, fontSize);
+            InputStream is = ProjectFont.class.getClassLoader()
+                .getResourceAsStream("resources/ClearSans-Bold.ttf");
+
+            font = Font.createFont(Font.TRUETYPE_FONT, is).deriveFont(Font.BOLD,
+                fontSize);
         }
         catch (Exception e) {
             // use a default Serif font
